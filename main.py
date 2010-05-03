@@ -137,10 +137,10 @@ class CityDetail(webapp.RequestHandler):
             self.response.out.write(template.render('templates/city.html', 
                    {'name':theCity.name, 'cityList':cityList, 'groups':groups}))
 
-class ReloadData(webapp.RequestHandler):
+class ClearCache(webapp.RequestHandler):
     def get(self):
-        loadData.loadData(self.response)
-        self.response.out.write( 'data reloaded')
+        memcache.delete('summpage')
+        self.response.out.write( 'memcache cleared')
 
 def main():
     application = webapp.WSGIApplication([('/', SummaryHandler),
@@ -150,7 +150,7 @@ def main():
                                           ('/with', SummaryHandler),
                                           ('/with/', SummaryHandler),
                                           ('/with/.*', CitiesWith),
-                                          ('/reload', ReloadData),
+                                          ('/reload', ClearCache),
                                           ('/DebugInfo', DebugInfo)],
                                          debug=True)
     util.run_wsgi_app(application)
