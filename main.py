@@ -150,7 +150,7 @@ def main():
                                           ('/with', SummaryHandler),
                                           ('/with/', SummaryHandler),
                                           ('/with/.*', CitiesWith),
-                                          ('/reload', ClearCache),
+                                          ('/memcacheclear', ClearCache),
                                           ('/DebugInfo', DebugInfo)],
                                          debug=True)
     util.run_wsgi_app(application)
