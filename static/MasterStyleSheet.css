@@ -1,0 +1,160 @@
+﻿/* Properties that both side lists have in common */
+#container 
+{    background-color: #C8F087;
+}
+#outer 
+{
+    background-image: url('backgroundslice.jpg') ;
+    background-repeat: repeat-x;
+    width: 100%; 
+    position:absolute;
+    top:0;
+    margin-top: -1px;
+    margin-bottom: 0;
+    left: -4px;
+}
+#citylist
+{
+    margin-top: 350px;
+    float: left;
+}    
+    
+
+#header
+{
+    font-size: 60;
+}
+
+#cityname
+{
+    margin-top: 2em;
+    border: double 8px white;
+}
+#chapterlogo 
+{
+    background-color: #C8F087;
+    width:200px;
+    position:absolute;
+    clear: both;
+    float: left;
+    font-size:80%;
+    margin-left:-2px;
+    margin-right: 0;
+    top: 152px;
+    left: 14px;
+}
+
+/* we leave some place on the side using the margin-* properties */
+#content 
+{
+        margin-top:10em;
+        margin-left:212px;
+        background-color: #C8F087;
+}
+#contact_info 
+{
+    background-color: #B9CDD0;
+    border: 8px double white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#plan_info 
+{
+    background-color: #B9CDD0;
+    border: 8px double white;
+    padding: 20px;
+    margin-top: 20px;
+}
+#action_info 
+{
+    background-color: #B9CDD0;
+    border: 8px double white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#citysummary 
+{
+    border: thick solid gray;
+    margin-left: 200px;
+    background-color: #C7D7AD;
+}
+.info-table-a
+{
+	font-size: 18px;
+	margin: 20px;
+	text-align: left;
+	border-collapse: collapse;
+}
+.info-table-a th
+{
+	font-size: 18px;
+	font-weight: normal;
+	padding: 2px;
+	border-top: 4px solid #aabcfe;
+	border-bottom: 1px solid #fff;
+	color: #039;
+}
+.info-table-a td
+{
+	padding: 2px;
+	border-bottom: 1px solid #fff;
+	border-top: 1px solid transparent;
+}
+.info-table-a tr:hover td
+{
+	background: #d0dafd;
+	color: #339;
+}
+
+#summary_table
+{
+	font-size: 18px;
+	margin: 20px;
+	text-align: left;
+	border-collapse: collapse;
+}
+#summary_table th
+{
+	font-size: 18px;
+	font-weight: normal;
+	padding: 2px;
+	border-top: 4px solid #aabcfe;
+	border-bottom: 1px solid #fff;
+	color: #039;
+}
+#summary_table td
+{
+	padding: 2px;
+	border-bottom: 1px solid #fff;
+	border-top: 1px solid transparent;
+}
+#summary_table tr:hover td
+{
+	background: #d0dafd;
+	color: #339;
+}
+
+
+/* and then we put each list on its place */
+
+body {
+ /* background-color: #689017;  */
+ background-color: #C8F087;
+}
+div.box  {
+    border-width: medium; 
+    width: 100%; 
+}
+.darkrow, .darkrow TD, .darkrow TH, .darkrow TR {
+    background-color:#66FFFF;
+    color:black;
+}
+.lightrow, .lightrow TD, .lightrow TH, .lightrow TR {
+    background-color:#FFFFCC;
+    color:black;
+}
+.savedFont {
+    	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+}

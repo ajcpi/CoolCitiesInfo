@@ -1,0 +1,8 @@
+.darkrow, .darkrow TD, .darkrow TH, .darkrow TR {
+    background-color:#66FFFF;
+    color:black;
+}
+.lightrow, .lightrow TD, .lightrow TH, .lightrow TR {
+    background-color:#FFFFCC;
+    color:black;
+}

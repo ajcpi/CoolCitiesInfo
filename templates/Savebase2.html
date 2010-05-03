@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{% block title %}My amazing site{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/MasterStyleSheet.css" />
+</head>
+<body>
+    <div id="container">
+    <div id="outer" >
+       <div id="header" ><img src="/static/ccheader.jpg" alt="Illinois Cool Cities"/></div>
+    </div>
+    <div id="chapterlogo">
+        <img  alt="Illinois Chapter Sierra Club"  src="/static/IllinoisChapterLogoOutline.PNG" style="height: 330px; width: 199px" />
+    </div>
+    <div id="citylist">
+    {% block citylist %}{% endblock %}
+    </div>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    </div>
+</body>
+</html>

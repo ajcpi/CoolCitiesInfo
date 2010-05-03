@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}City Information Overview {% endblock %}
+
+{% block content %}
+<table id="summary_table">
+    <tr>
+        {% for f in fields %}
+            <th>{{ f }}</th>
+        {% endfor %}
+    </tr>
+        {% for city in cList %}
+        <tr>
+            {% for v in city %}
+                <td>{{ v }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+{% endblock %}

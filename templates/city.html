@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}City Information for {{ city_info.0.1 }} {% endblock %}
+
+{% block content %}
+<div id="cityname"><h1><center>{{ name }}</center></h1></div>
+
+<div id="contact_info">
+<table class="info-table-a">
+{% for x in groups.contact_info %}
+<tr><td width="300">{{x.2}}</td><td>{{ x.1 }} </td></tr>
+{% endfor %}
+</table>
+</div>
+
+<div id="plan_info">
+<table class="info-table-a">
+{% for x in groups.plan_info %}
+<tr><td width="300">{{x.2}}</td><td>{{ x.1 }} </td></tr>
+{% endfor %}
+</table>
+</div>
+
+<div id="action_info">
+<table class="info-table-a">
+{% for x in groups.action_info %}
+<tr><td width="300">{{x.2}}</td><td>{{ x.1 }} </td></tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}City Information for {{ city_info.0.1 }} {% endblock %}
+
+{% block content %}
+<div id="attr_name"><h1><center>{{ name }}</center></h1></div>
+
+<div id="cities_with">
+<table class="info-table-a">
+{% for x in hasList %}
+<tr><td width="300">{{x.name}}</td><td>{{ x.value }} </td></tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}
