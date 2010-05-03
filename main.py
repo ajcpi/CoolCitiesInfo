@@ -30,7 +30,7 @@ import loadData
 LINELENGTH = 60
 COLORCLASS = ["darkrow", "lightrow"]
 IMAGEURL = '<img src="/static/Anselmus_Green_Checkmark.png" alt="+" width="20" height="20"/>'
-TWENTYDAYS = 20*24*60*60
+ONEDAY = 24*60*60
 def listifyString(s):
     """Replace '*' in the string with items in an unnumbered list in html syntax"""
     return s.replace('*', '</li><li>').replace('</li>', '<ul>', 1) + '</ul>'
@@ -64,7 +64,7 @@ class SummaryHandler(webapp.RequestHandler):
         summpage = memcache.get('summpage')
         if summpage is None:
             summpage = self.render_summpage()
-            if not memcache.add('summpage', summpage, TWENTYDAYS):
+            if not memcache.add('summpage', summpage, ONEDAY):
                 logging.error('memcache set failed')
         self.response.out.write(summpage)
 
