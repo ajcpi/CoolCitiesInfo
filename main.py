@@ -31,6 +31,13 @@ LINELENGTH = 60
 COLORCLASS = ["darkrow", "lightrow"]
 IMAGEURL = '<img src="/static/Anselmus_Green_Checkmark.png" alt="+" width="20" height="20"/>'
 ONEDAY = 24*60*60
+LISTABLE = ('Energy_efficiency', 
+            'renewable', 
+            'green_fleets', 
+            'codes_policies_regulations',
+            'comment',
+            'more_comments')
+            
 def listifyString(s):
     """Replace '*' in the string with items in an unnumbered list in html syntax"""
     return s.replace('*', '</li><li>').replace('</li>', '<ul>', 1) + '</ul>'
@@ -127,7 +134,7 @@ class CityDetail(webapp.RequestHandler):
                               'action_info':[]}
                     for field, cl, printname in model.atList:
                         value = getattr(theCity, field)
-                        if field == 'Energy_efficiency' or field == 'renewable':
+                        if field in LISTABLE:
                             value = listifyString(value)
                         if field == 'web_site':
                             value = urlify(value)
@@ -142,6 +149,14 @@ class ClearCache(webapp.RequestHandler):
         memcache.delete('summpage')
         self.response.out.write( 'memcache cleared')
 
+
+class ReloadData(webapp.RequestHandler):
+    def get(self):
+        cities=model.City.all()
+        loadData.clearData(self.response, cities)
+        loadData.loadData(self.response)
+        self.response.out.write( 'data reloaded')
+
 def main():
     application = webapp.WSGIApplication([('/', SummaryHandler),
                                           ('/city', SummaryHandler),
@@ -151,6 +166,7 @@ def main():
                                           ('/with/', SummaryHandler),
                                           ('/with/.*', CitiesWith),
                                           ('/memcacheclear', ClearCache),
+                                          ('/reload', ReloadData),
                                           ('/DebugInfo', DebugInfo)],
                                          debug=True)
     util.run_wsgi_app(application)

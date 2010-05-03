@@ -42,3 +42,12 @@ def loadData(response):
             setattr(c, k, l[k])
             c.put()
     datfile.close()
+    
+def clearData(response, cities):
+    n = 0
+    for c in cities:
+        c.delete()
+        n += 1
+    response.out.write('cleared %d cities' % (n,))
+    
+        
