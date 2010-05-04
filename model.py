@@ -1,6 +1,5 @@
-import datetime
 from google.appengine.ext import db
-from google.appengine.api import users
+
 class City(db.Model):
     name = db.StringProperty(required=True)
     mayor = db.StringProperty(required=False)

@@ -1,0 +1,2 @@
+\python25\python bulkloader.py --dump --app_id=coolcities-il --kind=City --url=http://localhost:8081/remote_api --filename=ccbulkddata.gae
+\python25\python bulkloader.py --restore --app_id=coolcities-il --kind=City --url=http://coolcities-il.appspot.com/remote_api --filename=ccbulkddata.gae
