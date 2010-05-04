@@ -22,7 +22,7 @@ class CityDetail(webapp.RequestHandler):
                             continue
                         value = getattr(theCity, field)
                         value = cityutils.listifyString(value)
-                        if field == 'web_site':
+                        if field == 'web_site' and value != '':
                             value = cityutils.urlify(value)
                         groups[cl].append((field, value, printname))
 

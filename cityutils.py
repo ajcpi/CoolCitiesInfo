@@ -19,7 +19,7 @@ def listifyString(s):
 def urlify(s):
     """turn any http:// strings into anchors"""
     s = s.replace('\n', ' ').replace('\t', ' ')
-    ustart = s.find('http://')
+    ustart = max(s.find('http://'), 0)
     qstart = ustart + 7
     uend = len(s)
     ulen =  s[ustart:].find(' ')
