@@ -27,3 +27,9 @@ class ReloadData(webapp.RequestHandler):
         loadData.clearData(self.response, cities)
         loadData.loadData(self.response)
         self.response.out.write( 'data reloaded')
+        
+class ClearData(webapp.RequestHandler):
+    def get(self):
+        cities=model.City.all()
+        loadData.clearData(self.response, cities)
+        self.response.out.write( 'data reloaded')
