@@ -133,9 +133,10 @@ class CityDetail(webapp.RequestHandler):
                               'plan_info': [], 
                               'action_info':[]}
                     for field, cl, printname in model.atList:
+                        if field == 'name':
+                            continue
                         value = getattr(theCity, field)
-                        if field in LISTABLE:
-                            value = listifyString(value)
+                        value = listifyString(value)
                         if field == 'web_site':
                             value = urlify(value)
                         groups[cl].append((field, value, printname))
