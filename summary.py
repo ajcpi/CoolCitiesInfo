@@ -28,6 +28,8 @@ class SummaryHandler(webapp.RequestHandler):
         for c in cityList:
             cvals = []
             for f in fnames:
+                if f in ('email', 'phone_email'):
+                    continue
                 v = getattr(c,f)
                 if (v == ''):
                     cvals.append(v)

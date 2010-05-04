@@ -10,6 +10,9 @@ class CitiesWith(webapp.RequestHandler):
     def get(self):
             cities = model.City.all()
             theAttr = self.request.path_info.split('/')[2]
+            if theAttr in ('email', 'phone_email'):
+                self.response.out.write('%s not available' % (theAttr,))
+                return
             hasList = []
             cityList = []
             for c in cities:
