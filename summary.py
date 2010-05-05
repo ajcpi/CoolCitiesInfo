@@ -2,7 +2,6 @@ import cgi
 import urllib
 import logging
 import urllib
-import glob
 
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
@@ -40,6 +39,25 @@ class SummaryHandler(webapp.RequestHandler):
                     # cvals.append('+') 
                     cvals.append(cityutils.IMAGEURL)
             cList.append(cvals)
-        anames = glob.glob('/static/announce/*.names')
-        
-        return template.render('templates/summary.html', { 'fields':furls, 'cList':cList})
+            #
+            # collect internal announcements
+            #
+            aments = file('links/announcements.list').readlines()
+            aList = []
+            for a in aments:
+                url, label = a.split('|')
+                aList.append('<a href="/static/%s">%s</s>' % (url.strip(), label.strip()))
+            #
+            # collect external links
+            #
+            externals = file('links/externals.list').readlines()
+            eList = []
+            for e in externals:
+                url, label = e.split('|')
+                eList.append('<a href="%s">%s</s>' % (url.strip(), label.strip()))
+
+        self.response.out.write(template.render('templates/summary.html', 
+                                                    {'announcements':aList, 
+                                                     'externals':eList,
+                                                     'cList':cList, 
+                                                     'fields':furls }))                

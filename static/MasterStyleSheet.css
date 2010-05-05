@@ -13,13 +13,14 @@
     margin-bottom: 0;
     left: -4px;
 }
-#citylist
+#leftbar
 {
     margin-top: 350px;
     float: left;
-}    
+    width: 200px;
     
-
+}
+ 
 #header
 {
     font-size: 60;

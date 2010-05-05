@@ -14,22 +14,10 @@
         <div id="chapterlogo">
             <img  alt="Illinois Chapter Sierra Club"  src="/static/IllinoisChapterLogoOutline.PNG" style="height: 330px; width: 199px" />
         </div>
-    <div id="citylist">
-        <center><h2><a href="/">Home</a></h2></center>
-        <ul>
-            {% for c in cityList %}
-                <li><a href="/city/{{c}}">{{ c }}</a></li>
-            {% endfor %}
+    <div id="leftbar">
+    {% block leftbar %}
         </ul>
-    </div>
-    <div id="announcements">
-    <ul>
-    {% for a in flist %}
-        <li>
-            {{ a }}
-        </li>
-    {% endfor %}
-    </ul>
+    {% endblock %}
     </div>
     <div id="content">
         {% block content %}{% endblock %}
