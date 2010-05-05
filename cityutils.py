@@ -10,14 +10,18 @@ LISTABLE = ('Energy_efficiency',
             'codes_policies_regulations',
             'comment',
             'more_comments')
-SKIPFIELDS = ('name', 'email', 'phone_email')
+SKIPFIELDS = ('email', 'city_email')
 
 def listifyString(s):
+    if not s:
+        return ''
     """Replace '*' in the string with items in an unnumbered list in html syntax"""
     return s.replace('*', '</li><li>').replace('</li>', '<ul>', 1) + '</ul>'
 
 def urlify(s):
     """turn any http:// strings into anchors"""
+    if not s:
+        return ''
     s = s.replace('\n', ' ').replace('\t', ' ')
     ustart = max(s.find('http://'), 0)
     qstart = ustart + 7

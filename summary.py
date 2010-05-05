@@ -23,12 +23,12 @@ class SummaryHandler(webapp.RequestHandler):
     def render_summpage(self):
         cityList = model.City.all()
         fnames, cls, fieldList = zip(*model.atList)
-        furls = [ '<a href="/with/%s">%s</a>' % (x[0], x[2]) for x in model.atList ]
+        furls = [ '<a href="/with/%s">%s</a>' % (x[0], x[2]) for x in model.atList if x[0] not in cityutils.SKIPFIELDS ]
         cList = []
         for c in cityList:
             cvals = []
             for f in fnames:
-                if f in ('email', 'phone_email'):
+                if f in cityutils.SKIPFIELDS:
                     continue
                 v = getattr(c,f)
                 if (v == ''):

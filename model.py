@@ -5,7 +5,8 @@ class City(db.Model):
     mayor = db.StringProperty(required=False)
     city_contact_name = db.StringProperty(required=False)
     Title = db.StringProperty(required=False)
-    phone_email = db.StringProperty(required=False)
+    phone = db.StringProperty(required=False)
+    city_email = db.StringProperty(required=False)
     cool_city_contact = db.StringProperty(required=False)
     email = db.StringProperty(required=False)
     ghg_inventory = db.StringProperty(required=False)
@@ -31,7 +32,8 @@ atList = [
 ('mayor', 'contact_info', 'Mayor'),
 ('city_contact_name', 'contact_info', 'City Contact'),
 ('Title', 'contact_info', 'Title'),
-('phone_email', 'contact_info', 'Phone/Email'),
+('phone', 'contact_info', 'Phone'),
+('city_email', 'contact_info', 'City Contact Email'),
 ('cool_city_contact', 'contact_info', 'Cool Cities Contact'),
 ('email', 'contact_info', 'Email'),
 ('web_site', 'plan_info', "City's Green Initiative Website"),
