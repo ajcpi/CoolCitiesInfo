@@ -2,6 +2,7 @@ import cgi
 import urllib
 import logging
 import urllib
+import glob
 
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
@@ -39,4 +40,6 @@ class SummaryHandler(webapp.RequestHandler):
                     # cvals.append('+') 
                     cvals.append(cityutils.IMAGEURL)
             cList.append(cvals)
+        anames = glob.glob('/static/announce/*.names')
+        
         return template.render('templates/summary.html', { 'fields':furls, 'cList':cList})

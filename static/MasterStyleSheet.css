@@ -47,6 +47,7 @@
 /* we leave some place on the side using the margin-* properties */
 #content 
 {
+        postion: absolute;
         margin-top:10em;
         margin-left:212px;
         background-color: #C8F087;
@@ -77,7 +78,6 @@
 #citysummary 
 {
     border: thick solid gray;
-    margin-left: 200px;
     background-color: #C7D7AD;
 }
 .info-table-a
@@ -111,8 +111,7 @@
 #summary_table
 {
 	font-size: 18px;
-	margin: 20px;
-	text-align: left;
+        text-align: left;
 	border-collapse: collapse;
 }
 #summary_table th

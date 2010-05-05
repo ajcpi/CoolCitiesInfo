@@ -22,6 +22,15 @@
             {% endfor %}
         </ul>
     </div>
+    <div id="announcements">
+    <ul>
+    {% for a in flist %}
+        <li>
+            {{ a }}
+        </li>
+    {% endfor %}
+    </ul>
+    </div>
     <div id="content">
         {% block content %}{% endblock %}
     </div>
