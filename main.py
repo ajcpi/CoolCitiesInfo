@@ -30,9 +30,7 @@ def main():
                                           ('/with', summary.SummaryHandler),
                                           ('/with/', summary.SummaryHandler),
                                           ('/with/.*', citieswith.CitiesWith),
-                                          ('/memcacheclear', adminfuncs.ClearCache),
-                                          ('/reload', adminfuncs.ReloadData),
-                                          ('/DebugInfo', adminfuncs.DebugInfo)],
+                                          ],
                                          debug=True)
     util.run_wsgi_app(application)
 

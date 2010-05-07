@@ -12,4 +12,11 @@
 {% endfor %}
 </table>
 </div>
+{% endblock %}{% block leftbar %}
+<center><h2><a href="/">Home</a></h2></center>
+<ul>
+    {% for c in cityList %}
+        <li><a href="/city/{{c}}">{{ c }}</a></li>
+    {% endfor %}
+</ul>
 {% endblock %}

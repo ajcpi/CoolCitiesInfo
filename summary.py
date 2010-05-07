@@ -60,4 +60,5 @@ class SummaryHandler(webapp.RequestHandler):
                                                     {'announcements':aList, 
                                                      'externals':eList,
                                                      'cList':cList, 
-                                                     'fields':furls }))                
+                                                     'fields':furls,
+                                                     }))                

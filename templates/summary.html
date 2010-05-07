@@ -18,3 +18,26 @@
         {% endfor %}
 </table>
 {% endblock %}
+
+{% block leftbar %}
+{% if announcements %}
+<fieldset id=announcementlist>
+<legend>Announcements</legend>
+<ul>
+{% for a in announcements %}
+<li>{{ a }}</li>
+{% endfor %}
+</ul>
+</fieldset>
+{% endif %}
+{% if externals %}
+<fieldset id=linklist>
+<legend>Links</legend>
+<ul>
+{% for e in externals %}
+<li>{{ e }}</li>
+{% endfor %}
+</ul>
+</fieldset>
+{% endif %}
+{% endblock %}
