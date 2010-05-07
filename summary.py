@@ -46,7 +46,7 @@ class SummaryHandler(webapp.RequestHandler):
             aList = []
             for a in aments:
                 url, label = a.split('|')
-                aList.append('<a href="/static/%s">%s</s>' % (url.strip(), label.strip()))
+                aList.append('<a href="/static/%s">%s</a>' % (url.strip(), label.strip()))
             #
             # collect external links
             #
@@ -54,7 +54,7 @@ class SummaryHandler(webapp.RequestHandler):
             eList = []
             for e in externals:
                 url, label = e.split('|')
-                eList.append('<a href="%s">%s</s>' % (url.strip(), label.strip()))
+                eList.append('<a href="%s">%s</a>' % (url.strip(), label.strip()))
 
         self.response.out.write(template.render('templates/summary.html', 
                                                     {'announcements':aList, 
