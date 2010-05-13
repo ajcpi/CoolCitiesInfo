@@ -5,17 +5,22 @@
 <head>
     <title>{% block title %}My amazing site{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="/static/MasterStyleSheet.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/static/tables.css" /> -->
 </head>
 <body>
 <div id="container">
         <div id="outer" >
-            <div id="header" ><a href="/"> <img src="/static/ccheader.jpg" alt="Illinois Cool Cities"/></a></div>
+            <div id="header" > <img src="/static/ccheader.jpg" alt="Illinois Cool Cities"/></div>
         </div>
         <div id="chapterlogo">
-            <img  alt="Illinois Chapter Sierra Club"  src="/static/IllinoisChapterLogoOutline.PNG" style="height: 330px; width: 199px" />
+            <img  alt="Illinois Chapter Sierra Club"  src="/static/IllinoisChapterLogoOutline.PNG" style="height: 220px; width: 133px" />
         </div>
     <div id="leftbar">
     {% block leftbar %}
+    {% endblock %}
+    </div>
+    <div id="rightbar">
+    {% block rightbar %}
     {% endblock %}
     </div>
     <div id="content">

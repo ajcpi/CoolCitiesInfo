@@ -28,7 +28,7 @@ class City(db.Model):
     comed_challenge = db.StringProperty(required=False)
 
 atList = [
-('name', 'contact_info', 'City'),
+('name', 'contact_info', ''),
 ('mayor', 'contact_info', 'Mayor'),
 ('city_contact_name', 'contact_info', 'City Contact'),
 ('Title', 'contact_info', 'Title'),

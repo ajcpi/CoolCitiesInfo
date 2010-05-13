@@ -29,7 +29,7 @@ class CityDetail(webapp.RequestHandler):
                               'plan_info': [], 
                               'action_info':[]}
                     for field, cl, printname in model.atList:
-                        if field in cityutils.SKIPFIELDS:
+                        if field in cityutils.SKIPFIELDS + ('name',):
                             continue
                         value = getattr(theCity, field)
                         value = cityutils.listifyString(value)

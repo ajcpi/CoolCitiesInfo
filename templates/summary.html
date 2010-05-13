@@ -3,41 +3,55 @@
 {% block title %}City Information Overview {% endblock %}
 
 {% block content %}
-<table id="summary_table">
+<div id="tableContainer" class="tableContainer">
+<table id="summary_table" class="scrollTable">
+    <thead class="fixedheader">
     <tr>
         {% for f in fields %}
-            <th>{{ f }}</th>
+            <td>{{ f }}</td>
         {% endfor %}
-    </tr>
+    </tr></thead>
+    <tbody class="scrollContent">
         {% for city in cList %}
         <tr>
             {% for v in city %}
-                <td>{{ v }}</td>
+                <td title="{{ v.txt }}">{{ v.sym }}</td>
             {% endfor %}
         </tr>
         {% endfor %}
-</table>
+    </tbody>
+</table></div>
 {% endblock %}
 
 {% block leftbar %}
 {% if announcements %}
 <fieldset id=announcementlist>
 <legend>Announcements</legend>
-<ul>
+<dl>
 {% for a in announcements %}
-<li>{{ a }}</li>
+<dt>{{ a }}</dt>
 {% endfor %}
-</ul>
+</dl>
 </fieldset>
 {% endif %}
 {% if externals %}
 <fieldset id=linklist>
 <legend>Links</legend>
-<ul>
+<dl>
 {% for e in externals %}
-<li>{{ e }}</li>
+<dt>{{ e }}</dt>
 {% endfor %}
-</ul>
+</dl>
 </fieldset>
 {% endif %}
+{% endblock %}
+{% block rightbar %}
+<center><h2>Key</h2></center>
+<dl id="key">
+{% for k in key %}
+{% if k.1 %}
+<dt>{{ k.1 }}</dt><dd>{{ k.2 }}</dd>
+{% endif %}
+{% endfor %}
+</dl>
 {% endblock %}
