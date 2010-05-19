@@ -1,0 +1,85 @@
+{% extends "threecolbase.html" %}
+
+{% block title %}City Information Overview {% endblock %}
+{% block scripts %}
+ 
+<link rel="stylesheet" type="text/css" media="screen" href="/static/css/ui_coolcities/jquery-ui-1.8.1.custom.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/static/css/ui.jqgrid.css" / >
+
+
+<script src="/static/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="/static/js/i18n/grid.locale-en.js" type="text/javascript"></script>
+<script src="/static/js/jquery.jqGrid.min.js" type="text/javascript"></script>
+ 
+<script type="text/javascript">
+jQuery(document).ready(function(){ 
+ jQuery("#summary_table").jqGrid({
+	datatype: "local",
+	height: 600,
+    hidegrid: false,
+    width: 500,
+   	colNames: [{% for k in key %} '{{ k.1 }}' , {% endfor %}],
+   	colModel: [
+            {% for k in key %}
+                {name:'{{ k.1 }}', 
+                    {% if forloop.first %} 
+                        width:70, formatter: 'link', 
+                    {% else %} 
+                        width: 20, 
+                    {% endif %} },
+            {% endfor %}
+   	],
+   	/*caption: "Cool Cities" */
+});
+var mydata = [
+        {% for city in cList %}
+                { {% for v in city %} 
+                    {{ v.name }}:'{{ v.val }}', 
+                {% endfor %} }, 
+        {% endfor %}
+		];
+for(var i=0;i<=mydata.length;i++)
+	jQuery("#summary_table").jqGrid('addRowData',i+1,mydata[i]);
+}); 
+</script>
+
+{% endblock %}
+{% block content %}
+<div id="tableContainer" class="tableContainer">
+<table id="summary_table"></table></div>
+{% endblock %}
+
+{% block leftbar %}
+{% if announcements %}
+<fieldset id=announcementlist>
+<legend>Announcements</legend>
+<dl>
+{% for a in announcements %}
+<dt>{{ a }}</dt>
+{% endfor %}
+</dl>
+</fieldset>
+{% endif %}
+{% if externals %}
+<fieldset id=linklist>
+<legend>Links</legend>
+<dl>
+{% for e in externals %}
+<dt>{{ e }}</dt>
+{% endfor %}
+</dl>
+</fieldset>
+{% endif %}
+{% endblock %}
+{% block rightbar %}
+<div id="rightbar"><center><h2>Key</h2></center>
+<dl id="key" class="sidebar">
+{% for k in key %}
+{% if forloop.first %}
+{% else %}
+<dt><a href="/with/{{ k.0 }}">{{ k.1 }}</a></dt><dd><a href="/with/{{ k.0 }}">{{ k.2 }}</a></dd>
+{% endif %}
+{% endfor %}
+</dl>
+</div>
+{% endblock %}

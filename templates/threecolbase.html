@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="/static/threecolscreen.css" media="screen" />
+    <title>{% block title %}My amazing site{% endblock %}</title>
+    <!-- <link rel="stylesheet" type="text/css" href="/static/tables.css" /> -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16395303-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<link rel="stylesheet" type="text/css" href="/static/MasterStyleSheet.css" />
+{% block scripts %}{% endblock %}
+
+</head>
+<body>
+
+<div id="outer" >
+     <div id="header" > <img src="/static/ccheader.jpg" alt="Illinois Cool Cities"/></div>
+</div>
+<div class="colmask threecol">
+	<div class="colmid">
+		<div class="colleft">
+			<div class="col1">
+                            {% block content %} {% endblock %}
+ 			</div>
+			<div class="col2">
+                            <div id="leftbar">
+                                <div id="chapterlogo">
+                                    <img  alt="Illinois Chapter Sierra Club"  src="/static/IllinoisChapterLogoOutline.PNG" height="220px" width="133px" />
+                                </div>
+                            {% block leftbar %} {% endblock %}
+                            </div>
+			</div>
+			<div class="col3">
+                            {% block rightbar %} {% endblock %}
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer">
+        <center>For more information contact: Lonnie Morris herbndove@comcast.net</center>
+</div>
+
+</body>
+</html>

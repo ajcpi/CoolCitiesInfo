@@ -3,28 +3,45 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
     <title>{% block title %}My amazing site{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="/static/MasterStyleSheet.css" />
     <!-- <link rel="stylesheet" type="text/css" href="/static/tables.css" /> -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16395303-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<link rel="stylesheet" type="text/css" href="/static/MasterStyleSheet.css" />
+{% block scripts %}{% endblock %}
+
 </head>
 <body>
+
 <div id="container">
         <div id="outer" >
             <div id="header" > <img src="/static/ccheader.jpg" alt="Illinois Cool Cities"/></div>
         </div>
-        <div id="chapterlogo">
-            <img  alt="Illinois Chapter Sierra Club"  src="/static/IllinoisChapterLogoOutline.PNG" style="height: 220px; width: 133px" />
-        </div>
-    <div id="leftbar">
-    {% block leftbar %}
-    {% endblock %}
+   <div id="content">
+    <div id="chapterlogo">
+            <img  alt="Illinois Chapter Sierra Club"  src="/static/IllinoisChapterLogoOutline.PNG"  />
     </div>
     <div id="rightbar">
     {% block rightbar %}
     {% endblock %}
     </div>
-    <div id="content">
-        {% block content %}{% endblock %}
+    <div id="leftbar">
+    {% block leftbar %}
+    {% endblock %}
+    </div>
+         {% block content %}{% endblock %}
     </div>
     <div id="footer">
         <center>For more information contact: Lonnie Morris herbndove@comcast.net</center>

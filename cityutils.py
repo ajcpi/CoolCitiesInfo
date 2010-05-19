@@ -12,10 +12,29 @@ LISTABLE = ('Energy_efficiency',
             'more_comments')
 SKIPFIELDS = ('email', 'city_email')
 
+SUMCOLUMNS = (
+('name', 'City', 'City'),
+('web_site', 'GIW', "City's Green Initiative Website"),
+('ghg_inventory', 'GGI', 'Greenhouse Gas inventory'),
+('climate_action_plan', 'CAP', 'Climate Action Plan'),
+('sustainability_plan', 'SP', 'Sustainability Plan'),
+('green_team', 'GT', 'Green team'),
+('environmental_concerns_committee', 'ECC', 'Environmental Concerns Committee'),
+('green_ribbon_panel', 'GRP', 'Green Ribbon Panel'),
+('Energy_efficiency', 'EE', 'Energy Efficiency'),
+('green_buildings', 'GB', 'Green Builings'),
+('renewable', 'RE', 'Renewable'),
+('revolving_loan', 'RL', 'Revolving Loan'),
+('biking_transportation', 'B_T', 'Biking/ Transportaion'),
+('green_fleets', 'GF', 'Green Fleets'),
+('codes_policies_regulations', 'C_P_R', 'Codes/ Policies/ Regulations'),
+('comed_challenge', 'CE', 'ComEd Challenge'),
+)
+
 def listifyString(s):
-    if not s:
-        return ''
     """Replace '*' in the string with items in an unnumbered list in html syntax"""
+    if s.find('*') < 0:
+        return s
     return s.replace('*', '</li><li>').replace('</li>', '<ul>', 1) + '</ul>'
 
 def urlify(s):

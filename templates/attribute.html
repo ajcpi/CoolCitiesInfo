@@ -1,24 +1,37 @@
-{% extends "base.html" %}
+{% extends "threecolbase.html" %}
 
-{% block title %}City Information for {{ city_info.0.1 }} {% endblock %}
+{% block title %}Cities with {{ name }} {% endblock %}
 
 {% block content %}
-<div id="attr_name"><h1><center>{{ name }}</center></h1></div>
+<div id="attr_name"><h1><center>Cities with {{ name }}</center></h1></div>
 
 <div id="cities_with">
 <table class="info-table-a">
 {% for x in hasList %}
-<tr><td width="300">{{x.name}}</td><td>{{ x.value }} </td></tr>
+<tr><td width="20%">{{x.name}}</td><td width="80%">{{ x.value }} </td></tr>
 {% endfor %}
 </table>
 </div>
-{% endblock %}{% block leftbar %}
+{% endblock %}
+{% block leftbar %}
 <center><h2><a href="/">Home</a></h2></center>
+<div id="rightbar" class="sidebar">
 <ul>
     {% for c in cityList %}
         <li><a href="/city/{{c}}">{{ c }}</a></li>
     {% endfor %}
 </ul>
+</div>
+{% endblock %}
+{% block rightbar %}
+<div id="rightbar" class="sidebar">
+<center><h2>Show Cities With</h2></center>
+<dl id="withlist">
+{% for k in key %}
+<dt><a href="/with/{{ k.0 }}">{{ k.2 }}</dt>
+{% endfor %}
+</dl>
+</div>
 {% endblock %}
 
 

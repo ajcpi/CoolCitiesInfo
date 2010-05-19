@@ -39,5 +39,5 @@ class CityDetail(webapp.RequestHandler):
 
 
             self.response.out.write(template.render('templates/city.html', 
-                   {'name':theCity.name, 'cityList':self.getCityList(), 'groups':groups}))
+                   {'name':theCity.name, 'cityList':self.getCityList(), 'groups':groups, 'key': cityutils.SUMCOLUMNS}))
 

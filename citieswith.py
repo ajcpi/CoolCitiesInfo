@@ -25,7 +25,7 @@ class CitiesWith(webapp.RequestHandler):
                 val = cityutils.listifyString( getattr(c, theAttr))
                 if val != '':
                     hasList.append( { 'name':'<a href="/city/%s">%s</a>' % \
-                        (urllib.quote(c.name), c.name), 'value':val})
+                        (urllib.quote(c.name), c.name), 'value': cityutils.listifyString(val)})
             self.response.out.write(template.render('templates/attribute.html', 
-                                    { 'name':attrLabel, 'cityList':cityList, 'hasList':hasList}))
+                                    { 'name':attrLabel, 'cityList':cityList, 'hasList':hasList, 'key': cityutils.SUMCOLUMNS}))
             return

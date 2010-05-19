@@ -1,34 +1,30 @@
 /* Properties that both side lists have in common */
 #container 
-{    background-color: #C8F087;
+{
+    background-color: #C8F087;
 }
 #outer 
 {
     background-image: url('backgroundslice.jpg') ;
     background-repeat: repeat-x;
     width: 100%; 
-    position:absolute;
-    top:0;
-    margin-top: -1px;
-    margin-bottom: 0;
-    left: -4px;
+}
+.sidebar
+{
+    border: 4px double white;
+    background-color: #B9CDD0;
 }
 #leftbar
 {
-    margin-top: 240px;
     float: left;
     width: 200px;
-    /*border: 8px double white;
-    padding: 5px; */
 }
 #rightbar
 {
-    margin-right: 5px;
-    margin-left: 15px;
+    margin-right: 10px;
+    margin-top: 20px;
     float: right;
-    width: 200px;
-    /*border: 8px double white;
-    padding: 5px; */
+    width: 220px;
 }
 #announcementlist
 {
@@ -43,6 +39,7 @@
 #header
 {
     font-size: 60;
+    margin-top: -10px;
 }
 #footer
 {
@@ -58,43 +55,29 @@
 #chapterlogo 
 {
     background-color: #C8F087;
-    width:200px;
-    position:absolute;
-    clear: both;
-    float: left;
-    font-size:80%;
+    margin-top: 1px;
     margin-left:-2px;
-    margin-right: 0;
 }
 
 /* we leave some place on the side using the margin-* properties */
 #content 
 {
-        postion: absolute;
         margin-top:10em;
         margin-left:212px;
         background-color: #C8F087;
+        top: 200;
 }
 #contact_info 
 {
-    background-color: #B9CDD0;
-    border: 8px double white;
-    padding: 20px;
     margin-top: 20px;
 }
 
 #plan_info 
 {
-    background-color: #B9CDD0;
-    border: 8px double white;
-    padding: 20px;
     margin-top: 20px;
 }
 #action_info 
 {
-    background-color: #B9CDD0;
-    border: 8px double white;
-    padding: 20px;
     margin-top: 20px;
 }
 
@@ -108,7 +91,10 @@
 	font-size: 18px;
 	margin: 20px;
 	text-align: left;
+    border: 8px double white;
+    background-color: #B9CDD0;
 	border-collapse: collapse;
+    width: 95%;
 }
 .info-table-a th
 {
@@ -131,24 +117,18 @@
 	color: #339;
 }
 #tableContainer {
-    width: 730px;
-    /* overflow:auto; */
-    /* height:35em;  */
+    margin-top: 20px;
 }
-tbody.scrollContent
-{
-    /* overflow: auto; */
-    height: 500px;
-    width: 720px;
-}
-#summary_table
+
+/* #summary_table
 {
 	font-size: 18px;
         text-align: left;
 	border-collapse: collapse;
         width: 90%;
-        /* overflow: auto; */
 }
+*/
+/* 
 #summary_table th
 {
 	font-size: 18px;
@@ -171,6 +151,9 @@ tbody.scrollContent
 	background: #d0dafd;
 	color: #339;
 }
+
+*/
+
 /* and then we put each list on its place */
 
 body {
@@ -181,6 +164,37 @@ div.box  {
     border-width: medium; 
     width: 100%; 
 }
+dt 
+{
+    margin-top: 15px;
+}
+dl.sidebar
+{
+    float: left;
+    padding: 5px;
+}
+
+dl.sidebar dt
+{
+	clear: left;
+	float: left;
+	width: 50px;
+	margin: 0.5em 0 0 0;
+	font-weight: bold;
+        text-align: right; 
+        color: green; 
+}
+dl.sidebar dt:after { 
+        content: ":"; 
+} 
+
+dl.sidebar dd
+{
+	width: 140px;
+	margin: 0.5em 0 0 70px;
+	border-bottom: 1px solid #999; 
+}
+/*
 #rightbar dl { 
         padding: 0.5em; 
         border: 4px double white;
@@ -201,6 +215,7 @@ div.box  {
         margin: 0 0 0 75px; 
         padding: 0 0 0.5em 0;
 }
+*/
 .darkrow, .darkrow TD, .darkrow TH, .darkrow TR {
     background-color:#66FFFF;
     color:black;
