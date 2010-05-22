@@ -26,7 +26,8 @@ FIELDNAMES = [
 "codes_policies_regulations",
 "comments",
 "more_comments",
-"comed_challenge"
+"comed_challenge",
+"local_food",
     ]
     
 
@@ -40,7 +41,7 @@ def loadData(response):
         for k in l:
             if (k == "None") or (not k):
                 continue
-            setattr(c, k, l[k])
+            setattr(c, k, l[k].replace('\n', ' '))
             c.put()
     datfile.close()
     

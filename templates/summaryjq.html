@@ -21,11 +21,11 @@ jQuery(document).ready(function(){
    	colNames: [{% for k in key %} '{{ k.1 }}' , {% endfor %}],
    	colModel: [
             {% for k in key %}
-                {name:'{{ k.1 }}', 
+                {name:'{{ k.1 }}',  index:'{{ k.1 }}', sorttype:'string', 
                     {% if forloop.first %} 
-                        width:70, formatter: 'link', 
+                        width:70, formatter:'link',  sortable:true,
                     {% else %} 
-                        width: 20, 
+                        width: 20, sortable:false,
                     {% endif %} },
             {% endfor %}
    	],

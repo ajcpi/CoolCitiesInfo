@@ -26,6 +26,7 @@ class City(db.Model):
     comments = db.StringProperty(required=False)
     more_comments = db.StringProperty(required=False)
     comed_challenge = db.StringProperty(required=False)
+    local_food = db.StringProperty(required=False)
 
 atList = [
 ('name', 'contact_info', ''),
@@ -46,6 +47,7 @@ atList = [
 ('Energy_efficiency', 'action_info', 'Energy Efficiency'),
 ('green_buildings', 'action_info', 'Green Builings'),
 ('renewable', 'action_info', 'Renewable'),
+('local_food', 'action_info', 'Local Food/Farmers Market'),
 ('revolving_loan', 'action_info', 'Revolving Loan'),
 ('biking_transportation', 'action_info', 'Biking/Transportaion'),
 ('green_fleets', 'action_info', 'Green Fleets'),

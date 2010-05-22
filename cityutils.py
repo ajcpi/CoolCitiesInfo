@@ -24,6 +24,7 @@ SUMCOLUMNS = (
 ('Energy_efficiency', 'EE', 'Energy Efficiency'),
 ('green_buildings', 'GB', 'Green Builings'),
 ('renewable', 'RE', 'Renewable'),
+('local_food', 'LF', 'Local Food/Farmers Market'),
 ('revolving_loan', 'RL', 'Revolving Loan'),
 ('biking_transportation', 'B_T', 'Biking/ Transportaion'),
 ('green_fleets', 'GF', 'Green Fleets'),
